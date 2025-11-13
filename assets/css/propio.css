@@ -1,0 +1,237 @@
+.typewriter {
+  font-size: 1, 5em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Fundo principal */
+.marca {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #e06628;
+  color: white;
+  padding: 120px
+}
+
+section { 
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texto de fundo PARCEIROS */
+section::before {
+  content: "PARCEIROS";
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.05);
+  letter-spacing: 10px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Título principal */
+h2 {
+  position: relative;
+  font-size: 40px;
+  font-weight: 900;
+  z-index: 1;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/* Caixa branca dos logos */
+.clientes-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 20px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  position: relative;
+}
+
+/* Logos */
+.clientes-container img {
+  height: 70px;
+  object-fit: contain;
+  filter: brightness(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.clientes-container img:hover {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+
+
+
+
+
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  padding: 40px 20px;
+}
+
+.slider {
+  display: flex;
+  width: max-content;
+  animation: slideAnimation 15s linear infinite;
+}
+
+.slide {
+  min-width: 150px;
+  padding: 20px;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 120px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+ 
+/* Responsivo */
+@media (max-width: 768px) {
+  section::before {
+    font-size: 90px;
+    top: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .clientes-container {
+    gap: 30px;
+  }
+
+  .clientes-container img {
+    height: 50px;
+  }
+
+  .marca {
+    padding: 20px
+  }
+
+}
+
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    .slide_prir {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide_pri {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide_pri.active {
+      opacity: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
+      z-index: 5;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      z-index: 10;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .content h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      letter-spacing: 1px;
+    }
+
+    .content p {
+      font-size: 1.3em;
+      font-weight: 300;
+      color: #f0f0f0;
+    }
+
+    /* Efeito máquina de escrever */
+    .typewriter {
+      border-right: 3px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #fff; }
+    }

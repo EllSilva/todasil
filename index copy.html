@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider Responsivo com Máquina de Escrever</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .slide.active {
+        opacity: 1;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0)
+        );
+        z-index: 5;
+      }
+
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 8%;
+        transform: translateY(-50%);
+        color: white;
+        z-index: 10;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .content h1 {
+        font-size: 3.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        letter-spacing: 1px;
+      }
+
+      .content p {
+        font-size: 1.4em;
+        font-weight: 300;
+        color: #f0f0f0;
+      }
+
+      /* Efeito máquina de escrever */
+      .typewriter {
+        border-right: 3px solid #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #fff;
+        }
+      }
+
+      /* ---- RESPONSIVIDADE ---- */
+
+      /* Tablets */
+      @media (max-width: 992px) {
+        .overlay {
+          width: 100%;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0)
+          );
+        }
+
+        .content {
+          left: 5%;
+          top: 55%;
+          transform: translateY(-50%);
+          text-align: center;
+          white-space: normal;
+        }
+
+        .content h1 {
+          font-size: 2.5em;
+        }
+
+        .content p {
+          font-size: 1.2em;
+        }
+      }
+
+      /* Telemóveis */
+      @media (max-width: 600px) {
+        .slider {
+          height: 100vh;
+        }
+
+        .overlay {
+          width: 100%;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0)
+          );
+        }
+
+        .content {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          width: 90%;
+        }
+
+        .content h1 {
+          font-size: 1.8em;
+          line-height: 1.3em;
+        }
+
+        .content p {
+          font-size: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div
+        class="slide active"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80');
+        "
+      ></div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1950&q=80');
+        "
+      ></div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1950&q=80');
+        "
+      ></div>
+
+      <div class="overlay"></div>
+
+      <div class="content">
+        <h1 class="typewriter" id="typewriter"></h1>
+        <p>Projetos inovadores com tecnologia e sustentabilidade.</p>
+      </div>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+      const typewriterText = [
+        "Soluções que impulsionam o progresso.",
+        "Inovação com eficiência e confiança.",
+        "Tecnologia para um futuro sustentável",
+        "Engenharia com excelência.",
+        "Qualidade em cada projeto."
+      ];
+
+      const typewriterElement = document.getElementById("typewriter");
+
+      function typeWriterEffect(text, i = 0) {
+        if (i < text.length) {
+          typewriterElement.textContent = text.substring(0, i + 1);
+          setTimeout(() => typeWriterEffect(text, i + 1), 80);
+        }
+      }
+
+      function showSlide(index) {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        slides[index].classList.add("active");
+        typewriterElement.textContent = "";
+        typeWriterEffect(typewriterText[index]);
+      }
+
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 6000);
+
+      showSlide(currentSlide);
+    </script>
+  </body>
+</html>

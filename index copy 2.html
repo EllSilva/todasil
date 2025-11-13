@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide_prir com Máquina de Escrever</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    .slide_prir {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide_pri {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide_pri.active {
+      opacity: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
+      z-index: 5;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      z-index: 10;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .content h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      letter-spacing: 1px;
+    }
+
+    .content p {
+      font-size: 1.3em;
+      font-weight: 300;
+      color: #f0f0f0;
+    }
+
+    /* Efeito máquina de escrever */
+    .typewriter {
+      border-right: 3px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 4s steps(40, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide_prir">
+    <div class="slide_pri active" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80');"></div>
+    <div class="slide_pri" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1950&q=80');"></div>
+    <div class="slide_pri" style="background-image: url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1950&q=80');"></div>
+    
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h1 class="typewriter" id="typewriter"></h1>
+      <p>Projetos inovadores com tecnologia e sustentabilidade.</p>
+    </div>
+  </div>
+
+  <script>
+    const slide_pris = document.querySelectorAll('.slide_pri');
+    let currentSlide_pri = 0;
+    const typewriterText = [
+      "Construindo o Futuro com Inovação",
+      "Infraestruturas Modernas e Sustentáveis",
+      "Tecnologia e Energia que Movem África"
+    ];
+
+    const typewriterElement = document.getElementById('typewriter');
+
+    function typeWriterEffect(text, i = 0) {
+      if (i < text.length) {
+        typewriterElement.textContent = text.substring(0, i + 1);
+        setTimeout(() => typeWriterEffect(text, i + 1), 80);
+      }
+    }
+
+    function showSlide_pri(index) {
+      slide_pris.forEach(slide_pri => slide_pri.classList.remove('active'));
+      slide_pris[index].classList.add('active');
+      typewriterElement.textContent = "";
+      typeWriterEffect(typewriterText[index]);
+    }
+
+    setInterval(() => {
+      currentSlide_pri = (currentSlide_pri + 1) % slide_pris.length;
+      showSlide_pri(currentSlide_pri);
+    }, 6000);
+
+    showSlide_pri(currentSlide_pri);
+  </script>
+</body>
+</html>
