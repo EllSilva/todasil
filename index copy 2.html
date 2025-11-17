@@ -3,316 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3 Slidexrs ATODASIL</title>
+<title>Menu Moderno</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ======= ESTILO BASE DO SLIDExR ======= */
-.slidexr-container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 50px auto;
-    background: #f6fafc;
-    border-radius: 12px;
-    padding: 40px;
-    overflow: hidden;
-    position: relative;
+/* ===== HEADER ===== */
+.header {
+  width: 100%;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s;
 }
 
-.slidexr {
-    position: relative;
+/* Shrink ao rolar */
+.header.scrolled {
+  padding: 8px 0;
+  background: rgba(255, 255, 255, 0.9);
 }
 
-.slidex {
-    display: none;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 30px;
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.slidex.active {
-    display: grid;
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.slidex .text-box p {
-    font-size: 22px;
-    line-height: 1.6;
-    color: #041b40;
+/* ===== LOGO ===== */
+.logo img {
+  width: 140px;
 }
 
-.slidex .author {
-    margin-top: 20px;
-    color: #555;
+/* ===== MENU DESKTOP ===== */
+.main-menu ul {
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.slidex .author span {
-    color: #777;
+.main-menu ul li {
+  position: relative;
 }
 
-.slidex img {
-    width: 100%;
-    border-radius: 12px;
+.main-menu ul li a {
+  color: #222;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: 0.3s;
 }
 
-/* Botões */
-.controls {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    display: flex;
-    gap: 10px;
+/* Hover com linha animada */
+.main-menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #007bff;
+  transition: 0.4s;
 }
 
-.btn {
-    width: 45px;
-    height: 45px;
-    background: #ff4d00;
-    color: #fff;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    transition: .3s;
+.main-menu ul li a:hover::after,
+.main-menu ul li.active a::after {
+  width: 100%;
 }
 
-.btn:hover {
-    background: #d83e00;
+/* ===== ÍCONE BUSCA ===== */
+.search i {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Títulos dos slidexrs */
-.slidexr-title {
-    font-size: 26px;
-    font-weight: 700;
-    color: #0d1b3f;
-    margin-bottom: 15px;
+.search i:hover {
+  color: #007bff;
 }
 
-/* Responsivo */
-@media (max-width: 850px) {
-    .slidex {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+/* ===== BURGER MENU (MOBILE) ===== */
+.menu-btn {
+  width: 32px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
+
+.menu-btn span {
+  height: 3px;
+  background: #222;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== MENU MOBILE ===== */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  padding: 60px 30px;
+  background: #fff;
+  box-shadow: -3px 0 15px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  z-index: 998;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav ul li a {
+  color: #222;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 992px) {
+  .d-lg-none { display: block !important; }
+  .d-lg-block { display: none !important; }
+}
+
+@media (min-width: 993px) {
+  .d-lg-none { display: none !important; }
+  .d-lg-block { display: block !important; }
+}
+
 </style>
 </head>
-
 <body>
 
-<!-- ================= SLIDExR 1 ================= -->
-<div class="slidexr-container">
-    <h2 class="slidexr-title">Nossos Serviços — Elétrica</h2>
+<header class="header" id="header">
+  <div class="container">
+    <div class="row">
 
-    <div class="slidexr" id="slidexr1">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+      </div>
 
-        <!-- 6 SLIDExS -->
-        <div class="slidex active">
-            <div class="text-box">
-                <p>Instalações elétricas com alto padrão de segurança e qualidade.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s1-1.jpg"></div>
-        </div>
+      <!-- Menu Desktop -->
+      <nav class="main-menu d-lg-block d-none">
+        <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
 
-        <div class="slidex">
-            <div class="text-box">
-                <p>Montagem de quadros elétricos industriais.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s1-2.jpg"></div>
-        </div>
+      <!-- Busca -->
+      <div class="search d-lg-block d-none">
+        <i class="fa fa-search"></i>
+      </div>
 
-        <div class="slidex">
-            <div class="text-box">
-                <p>Sistemas de iluminação inteligente para residências e empresas.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s1-3.jpg"></div>
-        </div>
+      <!-- Menu Mobile -->
+      <div class="menu-btn d-lg-none" id="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-        <div class="slidex">
-            <div class="text-box">
-                <p>Serviços de manutenção elétrica preventiva e corretiva.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s1-4.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Instalações de sistemas de energia alternativa.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s1-5.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Projetos elétricos de alta eficiência para qualquer escala.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s1-6.jpg"></div>
-        </div>
-
-        <div class="controls">
-            <div class="btn prev" data-slidexr="1">&#10094;</div>
-            <div class="btn next" data-slidexr="1">&#10095;</div>
-        </div>
     </div>
-</div>
+  </div>
+</header>
 
-<!-- ================= SLIDExR 2 ================= -->
-<div class="slidexr-container">
-    <h2 class="slidexr-title">Nossos Serviços — Mecânica</h2>
-
-    <div class="slidexr" id="slidexr2">
-
-        <div class="slidex active">
-            <div class="text-box">
-                <p>Reparação mecânica industrial com precisão técnica.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s2-1.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Manutenção automotiva profissional para frotas.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s2-2.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Serviços de diagnóstico e reparação de motores.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s2-3.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Manutenção de máquinas industriais pesadas.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s2-4.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Alinhamento, afinação e calibração técnica.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s2-5.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Soluções mecânicas completas para empresas.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s2-6.jpg"></div>
-        </div>
-
-        <div class="controls">
-            <div class="btn prev" data-slidexr="2">&#10094;</div>
-            <div class="btn next" data-slidexr="2">&#10095;</div>
-        </div>
-    </div>
-</div>
-
-<!-- ================= SLIDExR 3 ================= -->
-<div class="slidexr-container">
-    <h2 class="slidexr-title">Nossos Serviços — Industrial</h2>
-
-    <div class="slidexr" id="slidexr3">
-
-        <div class="slidex active">
-            <div class="text-box">
-                <p>Gestão e implementação de soluções industriais.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s3-1.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Automação de processos industriais.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s3-2.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Modernização de linhas de produção.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s3-3.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Montagem e manutenção de equipamentos industriais.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s3-4.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Soluções industriais de grande escala.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s3-5.jpg"></div>
-        </div>
-
-        <div class="slidex">
-            <div class="text-box">
-                <p>Suporte técnico especializado para operações industriais.</p>
-                <p class="author">— ATODASIL</p>
-            </div>
-            <div><img src="img/s3-6.jpg"></div>
-        </div>
-
-        <div class="controls">
-            <div class="btn prev" data-slidexr="3">&#10094;</div>
-            <div class="btn next" data-slidexr="3">&#10095;</div>
-        </div>
-    </div>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
 </div>
 
 <script>
-/* ================= JS PARA 3 SLIDExRS ================= */
-function initSlidexr(id) {
-    const slidexr = document.querySelector("#slidexr" + id);
-    const slidexs = slidexr.querySelectorAll(".slidex");
-    const next = document.querySelector('.next[data-slidexr="' + id + '"]');
-    const prev = document.querySelector('.prev[data-slidexr="' + id + '"]');
+/* Toggle mobile menu */
+const menuBtn = document.getElementById("menu-btn");
+const mobileNav = document.getElementById("mobile-nav");
+const header = document.getElementById("header");
 
-    let index = 0;
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("active");
+  mobileNav.classList.toggle("active");
+});
 
-    function show(i) {
-        slidexs.forEach(s => s.classList.remove("active"));
-        slidexs[i].classList.add("active");
-    }
-
-    next.onclick = () => {
-        index = (index + 1) % slidexs.length;
-        show(index);
-    };
-
-    prev.onclick = () => {
-        index = (index - 1 + slidexs.length) % slidexs.length;
-        show(index);
-    };
-}
-
-initSlidexr(1);
-initSlidexr(2);
-initSlidexr(3);
+/* Header shrink ao rolar */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 80) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
 </script>
 
 </body>

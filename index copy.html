@@ -1,118 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galeria de Produtos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabeçalho</title>
 
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Header */
+    .header {
+      width: 100%;
+      padding: 15px 0;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
     }
 
-    .product-gallery {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 30px;
+    .header .logo img {
+      width: 140px;
     }
 
-    .product-card {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        text-align: center;
-        padding: 20px;
-        transition: 0.3s ease;
+    /* Menu Desktop */
+    .main-menu ul {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    .main-menu ul li a {
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
     }
 
-    .product-card img {
-        width: 100%;
-        border-radius: 10px;
+    .main-menu ul li a:hover,
+    .main-menu ul li.active a {
+      color: #007bff;
     }
 
-    .product-card h3 {
-        margin-top: 15px;
-        font-size: 20px;
-        font-weight: bold;
+    /* Buscar */
+    .search i {
+      font-size: 20px;
+      cursor: pointer;
+      color: #333;
     }
 
-    .product-card p {
-        font-size: 14px;
-        color: #555;
-        margin: 10px 0;
+    /* Menu Mobile Botão */
+    .menu-toggle {
+      font-size: 32px;
+      cursor: pointer;
+      user-select: none;
     }
 
-    .price {
-        display: block;
-        font-size: 18px;
-        color: #0A74DA;
-        font-weight: bold;
-        margin-bottom: 15px;
+    /* Mobile Menu */
+    .mobile-nav {
+      display: none;
+      background: #fff;
+      width: 100%;
+      padding: 20px 0;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      position: absolute;
+      top: 80px;
+      left: 0;
+      z-index: 998;
     }
 
-    .product-card button {
-        background: #0A74DA;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.3s;
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0 20px;
+      margin: 0;
     }
 
-    .product-card button:hover {
-        background: #064a8c;
+    .mobile-nav ul li {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
     }
-</style>
+
+    .mobile-nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    /* Ajustes gerais */
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      max-width: 1200px;
+    }
+
+    @media (max-width: 992px) {
+      .d-lg-block { display: none; }
+      .d-lg-none { display: block !important; }
+    }
+
+    @media (min-width: 993px) {
+      .d-none { display: none !important; }
+      .d-lg-block { display: block !important; }
+      .d-lg-none { display: none !important; }
+    }
+  </style>
+
 </head>
-
 <body>
 
-<h1 style="text-align:center; margin-top:20px;">Galeria de Produtos</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="row">
 
-<div class="product-gallery">
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 1">
-        <h3>Produto 1</h3>
-        <p>Descrição curta do produto.</p>
-        <span class="price">15.000 AKZ</span>
-        <button>Comprar</button>
+        <!-- Logo -->
+        <div class="col-logo">
+          <a href="#/">
+            <img src="assets/img/logo/logo.png" alt="Logo">
+          </a>
+        </div>
+
+        <!-- Menu Desktop -->
+        <div class="main-menu d-lg-block d-none">
+          <ul id="navigation">
+            <li class="active"><a href="#/">Home</a></li>
+            <li><a href="#/sobre">Sobre</a></li>
+            <li><a href="#/servicos">Serviços</a></li>
+            <li><a href="#/contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Ícone Busca -->
+        <div class="d-lg-block d-none search">
+          <i class="fa fa-search"></i>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div class="d-lg-none">
+          <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 2">
-        <h3>Produto 2</h3>
-        <p>Descrição curta do produto.</p>
-        <span class="price">25.000 AKZ</span>
-        <button>Comprar</button>
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+      <ul>
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/sobre">Sobre</a></li>
+        <li><a href="#/servicos">Serviços</a></li>
+        <li><a href="#/contato">Contato</a></li>
+      </ul>
     </div>
 
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 3">
-        <h3>Produto 3</h3>
-        <p>Descrição curta do produto.</p>
-        <span class="price">10.000 AKZ</span>
-        <button>Comprar</button>
-    </div>
+  </header>
 
-    <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Produto 4">
-        <h3>Produto 4</h3>
-        <p>Descrição curta do produto.</p>
-        <span class="price">19.500 AKZ</span>
-        <button>Comprar</button>
-    </div>
-</div>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    toggle.addEventListener("click", () => {
+      mobileNav.style.display =
+        mobileNav.style.display === "block" ? "none" : "block";
+    });
+  </script>
 
 </body>
 </html>

@@ -1,532 +1,699 @@
- .sobre_fundo {
-   background-image: url("./../img/hero/hero2.png");
-   background-size: cover;
-   /* cobre toda área */
-   background-position: center;
-   /* centraliza */
-   background-repeat: no-repeat;
- }
-
- /* Fundo principal  slidex */
- .marca {
-   margin: 0;
-   font-family: "Poppins", sans-serif;
-   background-color: #e06628;
-   color: white;
-   padding: 120px
- }
-
- .galeria {
-   border-radius: 10px;
-   
-   width: 100%;
-   height: 100%;
- }
-
- section {
-   padding: 60px 20px;
-   position: relative;
-   overflow: hidden;
- }
-
- /* Texto de fundo PARCEIROS */
- section::before {
-   content: "PARCEIROS";
-   position: absolute;
-   top: 50px;
-   left: 50%;
-   transform: translateX(-50%);
-   font-size: 160px;
-   font-weight: 800;
-   color: rgba(255, 255, 255, 0.05);
-   letter-spacing: 10px;
-   pointer-events: none;
-   z-index: 0;
- }
-
- /* Título principal */
- h2 {
-   position: relative;
-   font-size: 40px;
-   font-weight: 900;
-   z-index: 1;
-   margin-bottom: 50px;
-   color: #fff;
-
- }
-
- /* Caixa branca dos logos */
- .clientes-container {
-   background-color: white;
-   border-radius: 10px;
-   padding: 40px 20px;
-   width: 85%;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 60px;
-   flex-wrap: wrap;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-   z-index: 2;
-   position: relative;
- }
-
- /* Logos */
- .clientes-container img {
-   height: 70px;
-   object-fit: contain;
-   filter: brightness(1);
-   transition: transform 0.3s ease, filter 0.3s ease;
- }
-
- .clientes-container img:hover {
-   transform: scale(1.1);
-   filter: brightness(0.8);
- }
-
-
-
-
-
-
- .slider-container {
-   overflow: hidden;
-   position: relative;
-   width: 100%;
-   margin: auto;
-   background: white;
-   border-radius: 10px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-   padding: 40px 20px;
- }
-
- .slider {
-   display: flex;
-   width: max-content;
-   animation: slideAnimation 15s linear infinite;
- }
-
- .slide {
-   min-width: 150px;
-   padding: 20px;
-   text-align: center;
- }
-
- .slide img {
-   max-width: 120px;
-   height: auto;
-   transition: transform 0.3s ease-in-out;
- }
-
- .slide img:hover {
-   transform: scale(1.1);
- }
-
- @keyframes slideAnimation {
-   0% {
-     transform: translateX(0);
-   }
-
-   100% {
-     transform: translateX(-50%);
-   }
- }
-
- /* SLIDER SERVICOS  */
-
-
- /* ======= ESTILO BASE DO SLIDExR ======= */
- .slidexr-container {
-   width: 100%;
-   margin: 50px auto;
-   background: #f6fafc;
-   border-radius: 12px;
-   padding: 40px;
-   overflow: hidden;
-   position: relative;
- }
-
- .slidexr-container-br {
-   width: 100%;
-   margin: 50px auto;
-   border-radius: 12px;
-   padding: 40px;
-   overflow: hidden;
-   position: relative;
- }
-
- .slidexr {
-   width: 90%;
-   margin: 50px auto;
-   position: relative;
-
- }
-
- .slidex {
-   display: none;
-   grid-template-columns: 1fr 1fr;
-   align-items: center;
-   gap: 30px;
- }
-
- .slidex.active {
-   display: grid;
- }
-
- .slidex .text-box p {
-   font-size: 16px;
-   line-height: 1.6;
-   color: #041b40;
- }
-
- .slidex .author {
-   margin-top: 20px;
-   color: #555;
- }
-
- .slidex .author span {
-   color: #777;
- }
-
- .slidex img {
-   width: 100%;
-   border-radius: 12px;
- }
-
- /* Botões */
- .controls {
-   position: absolute;
-   bottom: 25px;
-   right: 25px;
-   display: flex;
-   gap: 10px;
- }
-
-
-
- /* Títulos dos slidexrs */
- .slidexr-title {
-   font-size: 26px;
-   font-weight: 700;
-   color: #0d1b3f;
-   margin-bottom: 15px;
- }
-
- /* Responsivo */
- @media (max-width: 850px) {
-   .slidex {
-     grid-template-columns: 1fr;
-     text-align: center;
-   }
- }
-
- /* FIM SLIDER SERVICOS  */
-
-
- /* Responsivo */
- @media (max-width: 768px) {
-   section::before {
-     font-size: 90px;
-     top: 30px;
-   }
-
-   h2 {
-     font-size: 28px;
-   }
-
-   .clientes-container {
-     gap: 30px;
-   }
-
-   .clientes-container img {
-     height: 50px;
-   }
-
-   .marca {
-     padding: 20px
-   }
-
- }
-
-
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Poppins', sans-serif;
- }
-
- body {
-   overflow: hidden;
- }
-
- .slide_prir {
-   position: relative;
-   width: 100%;
-   height: 100vh;
-   overflow: hidden;
- }
-
- .slide_pri {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   background-size: cover;
-   background-position: center;
-   opacity: 0;
-   transition: opacity 1s ease-in-out;
- }
-
- .slide_pri.active {
-   opacity: 1;
- }
-
- .overlay {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 50%;
-   height: 100%;
-   background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0));
-
- }
-
- .content {
-   position: absolute;
-   top: 50%;
-   left: 10%;
-   transform: translateY(-50%);
-   color: rgb(241, 241, 241);
-   z-index: 10;
-   text-align: left;
-   white-space: nowrap;
- }
-
- .content h1 {
-   font-size: 5em;
-   font-weight: 800;
-   margin-bottom: 10px;
-   text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7);
-   letter-spacing: 4px;
- }
-
- .content p {
-   font-size: 1.3em;
-   font-weight: 300;
-   color: #f0f0f0;
- }
-
- /* Efeito máquina de escrever */
- .typewriter {
-   border-right: 3px solid #fff;
-   white-space: nowrap;
-   overflow: hidden;
-   display: inline-block;
-   animation: typing 4s steps(40, end), blink .75s step-end infinite;
-   font-weight: 900;
- }
-
- @keyframes typing {
-   from {
-     width: 0;
-   }
-
-   to {
-     width: 100%;
-   }
- }
-
- @keyframes blink {
-
-   from,
-   to {
-     border-color: transparent;
-   }
-
-   50% {
-     border-color: #fff;
-   }
- }
-
-
-
-
- /* INICIO  typewriter*/
-
-
-
- .hero_sobre {
-   width: 100%;
-   padding: 50px 5%;
-   text-align: center;
- }
-
- .title {
-   font-size: 80px;
-   font-weight: bold;
-   color: #c47943;
-   margin-bottom: 60px;
- }
-
- .content_sobre {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 60px;
-   flex-wrap: wrap;
- }
-
- .image-box {
-   width: 500px;
-   overflow: hidden;
- }
-
- .image-box img {
-   width: 100%;
-   border-radius: 5px;
- }
-
- .text-box {
-   max-width: 750px;
-   text-align: left;
- }
-
- .text-box h2 {
-   font-size: 36px;
-   margin-bottom: 5px;
- }
-
- .text-box .underline {
-   color: #050505;
-   margin-bottom: 5px;
-   font-weight: 800;
-   /* bold (grosso) */
- }
-
- .text-box .underline2 {
-   color: #888;
-   text-decoration: underline;
-   font-weight: 400;
-   margin-bottom: 20px;
- }
-
-
- .text-box p {
-   line-height: 1.6;
-   font-size: 16px;
-   margin-bottom: 40px;
- }
-
- .link {
-   text-decoration: none;
-   color: #c47943;
-   font-weight: bold;
-   border-bottom: 1px solid #c47943;
-   padding-bottom: 3px;
- }
-
- /* FIM */
-
-
- /* INICIO  MISSÃO  */
-
- .misao_visao {
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 0;
-   text-align: center;
- }
-
- .container_misao_visao {
-   max-width: 1600px;
-   margin: 50px auto;
-   display: flex;
-   gap: 20px;
-   flex-wrap: nowrap;
-   justify-content: space-around;
- }
-
- .box_misao_visao {
-   width: 450px;
-   padding: 20px;
-   background: linear-gradient(135deg, #ffc123, #ff6e20);
-   border-radius: 10px;
-   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-   transition: transform 0.3s;
-   color: white;
- }
-
- .texto {
-   font-size: 50px;
-   display: block;
-   color: #e69130;
-   font-weight: 800;
-   text-transform: normal;
-   line-height: 1.4;
- }
-
- .box_misao_visao p {
-   color: white;
- }
-
-
-
- .box_misao_visao:hover {
-   transform: scale(1.05);
- }
-
- .icon_misao_visao {
-   font-size: 60px;
-   margin-bottom: 10px;
- }
-
- .front-text h2 {
-   margin-bottom: 10px;
-   color: white;
- }
-
- @media (max-width: 800px) {
-   .container_misao_visao {
-     flex-wrap: wrap;
-   }
- }
-
-
-
- /* FIM */
-
- h1 {
-   color: #1a3b6f;
-   font-size: 24px;
-   margin-bottom: 20px;
- }
-
- .lista_ul ul {
-   list-style: none;
-   /* Remove bullets padrão */
-   padding: 0;
- }
-
- .lista_ul ul li {
-   position: relative;
-   padding-left: 35px;
-   /* Espaço para o círculo personalizado */
-   margin-bottom: 1px;
-   font-size: 14px;
-   color: #1a3b6f;
- }
-
- /* Círculo personalizado */
- .lista_ul ul li::before {
-   content: '';
-   position: absolute;
-   left: 0;
-   top: 50%;
-   transform: translateY(-50%);
-   width: 12px;
-   height: 12px;
-   border: 2px solid #1a3b6f;
-   border-radius: 50%;
- }
+.wrap {
+  white-space: normal;
+  /* permite quebra de linha padrão */
+  overflow-wrap: anywhere;
+  /* permite quebrar palavras longas quando necessário */
+  word-wrap: break-word;
+  /* compatibilidade antiga  .overlay */
+  hyphens: auto;
+  /* sugere hífens em navegadores que suportam */
+  width: 50%;
+}
+
+/* Header content */
+.header {
+  width: 100%;
+  padding: 15px 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.header .logo img {
+  width: 140px;
+}
+
+/* Menu Desktop */
+.main-menu ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu ul li a {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.main-menu ul li a:hover,
+.main-menu ul li.active a {
+  color: #007bff;
+}
+
+/* Buscar */
+.search i {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Menu Mobile Botão */
+.menu-toggle {
+  font-size: 32px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mobile Menu */
+.mobile-nav {
+  display: none;
+  background: #fff;
+  width: 100%;
+  padding: 20px 0;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 9999
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.mobile-nav ul li {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Ajustes gerais */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+@media (max-width: 992px) {
+  .d-lg-block {
+    display: none;
+  }
+
+  .d-lg-none {
+    display: block !important;
+  }
+}
+
+@media (min-width: 993px) {
+  .d-none {
+    display: none !important;
+  }
+
+  .d-lg-block {
+    display: block !important;
+  }
+
+  .d-lg-none {
+    display: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sobre_fundo {
+  background-image: url("./../img/hero/hero2.png");
+  background-size: cover;
+  /* cobre toda área */
+  background-position: center;
+  /* centraliza */
+  background-repeat: no-repeat;
+}
+
+/* Fundo principal  slidex */
+.marca {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #e06628;
+  color: white;
+  padding: 120px
+}
+
+.galeria {
+  border-radius: 10px;
+
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texto de fundo PARCEIROS */
+section::before {
+  content: "PARCEIROS";
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 160px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.05);
+  letter-spacing: 10px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Título principal */
+h2 {
+  position: relative;
+  font-size: 40px;
+  font-weight: 900;
+  z-index: 1;
+  margin-bottom: 50px;
+  color: #fff;
+
+}
+
+/* Caixa branca dos logos */
+.clientes-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 20px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  position: relative;
+}
+
+/* Logos */
+.clientes-container img {
+  height: 70px;
+  object-fit: contain;
+  filter: brightness(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.clientes-container img:hover {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+
+
+
+
+
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  padding: 40px 20px;
+}
+
+.slider {
+  display: flex;
+  width: max-content;
+  animation: slideAnimation 15s linear infinite;
+}
+
+.slide {
+  min-width: 150px;
+  padding: 20px;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 120px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* SLIDER SERVICOS  */
+
+
+/* ======= ESTILO BASE DO SLIDExR ======= */
+.slidexr-container {
+  width: 100%;
+  margin: 50px auto;
+  background: #f6fafc;
+  border-radius: 12px;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slidexr-container-br {
+  width: 100%;
+  margin: 50px auto;
+  border-radius: 12px;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slidexr {
+  width: 90%;
+  margin: 50px auto;
+  position: relative;
+
+}
+
+.slidex {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.slidex.active {
+  display: grid;
+}
+
+.slidex .text-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #041b40;
+}
+
+.slidex .author {
+  margin-top: 20px;
+  color: #555;
+}
+
+.slidex .author span {
+  color: #777;
+}
+
+.slidex img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Botões */
+.controls {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+
+
+/* Títulos dos slidexrs */
+.slidexr-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0d1b3f;
+  margin-bottom: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+
+  .slidex {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* FIM SLIDER SERVICOS  */
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+
+  .wrap {
+    width: 90%;
+  }
+
+  section::before {
+    font-size: 90px;
+    top: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .clientes-container {
+    gap: 30px;
+  }
+
+  .clientes-container img {
+    height: 50px;
+  }
+
+  .marca {
+    padding: 20px
+  }
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.slide_prir {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide_pri {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide_pri.active {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0));
+
+}
+
+.content {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: rgb(241, 241, 241);
+
+  text-align: left;
+  white-space: nowrap;
+}
+
+.content h1 {
+  font-size: 5em;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7);
+  letter-spacing: 4px;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+  .content h1 {
+    font-size: 2em;
+  }
+
+}
+
+.content p {
+  font-size: 1.3em;
+  font-weight: 300;
+  color: #f0f0f0;
+}
+
+/* Efeito máquina de escrever */
+.typewriter {
+  border-right: 3px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 4s steps(40, end), blink .75s step-end infinite;
+  font-weight: 900;
+  z-index: 66;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #fff;
+  }
+}
+
+
+
+
+/* INICIO  typewriter*/
+
+
+
+.hero_sobre {
+  width: 100%;
+  padding: 50px 5%;
+  text-align: center;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: bold;
+  color: #c47943;
+  margin-bottom: 10px;
+}
+
+.content_sobre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.image-box {
+  width: 500px;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.text-box {
+  max-width: 750px;
+  text-align: left;
+}
+
+.text-box h2 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.text-box .underline {
+  color: #050505;
+  margin-bottom: 5px;
+  font-weight: 800;
+  /* bold (grosso) */
+}
+
+.text-box .underline2 {
+  color: #888;
+  text-decoration: underline;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+
+.text-box p {
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.link {
+  text-decoration: none;
+  color: #c47943;
+  font-weight: bold;
+  border-bottom: 1px solid #c47943;
+  padding-bottom: 3px;
+}
+
+/* FIM */
+
+
+/* INICIO  MISSÃO  */
+
+.misao_visao {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container_misao_visao {
+  max-width: 1600px;
+  margin: 50px auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.box_misao_visao {
+  width: 450px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffc123, #ff6e20);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  color: white;
+}
+
+.texto {
+  font-size: 50px;
+  display: block;
+  color: #e69130;
+  font-weight: 800;
+  text-transform: normal;
+  line-height: 1.4;
+}
+
+.box_misao_visao p {
+  color: white;
+}
+
+
+
+.box_misao_visao:hover {
+  transform: scale(1.05);
+}
+
+.icon_misao_visao {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.front-text h2 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .container_misao_visao {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+/* FIM */
+
+h1 {
+  color: #1a3b6f;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.lista_ul ul {
+  list-style: none;
+  /* Remove bullets padrão */
+  padding: 0;
+}
+
+.lista_ul ul li {
+  position: relative;
+  padding-left: 35px;
+  /* Espaço para o círculo personalizado */
+  margin-bottom: 1px;
+  font-size: 14px;
+  color: #1a3b6f;
+}
+
+/* Círculo personalizado */
+.lista_ul ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid #1a3b6f;
+  border-radius: 50%;
+}
