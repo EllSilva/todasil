@@ -1,142 +1,319 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slide_prir com Máquina de Escrever</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Slidexrs ATODASIL</title>
 
-    body {
-      overflow: hidden;
-    }
+<style>
+/* ======= ESTILO BASE DO SLIDExR ======= */
+.slidexr-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    background: #f6fafc;
+    border-radius: 12px;
+    padding: 40px;
+    overflow: hidden;
+    position: relative;
+}
 
-    .slide_prir {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
+.slidexr {
+    position: relative;
+}
 
-    .slide_pri {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+.slidex {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
 
-    .slide_pri.active {
-      opacity: 1;
-    }
+.slidex.active {
+    display: grid;
+}
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
-      z-index: 5;
-    }
+.slidex .text-box p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #041b40;
+}
 
-    .content {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-      color: white;
-      z-index: 10;
-      text-align: left;
-      white-space: nowrap;
-    }
+.slidex .author {
+    margin-top: 20px;
+    color: #555;
+}
 
-    .content h1 {
-      font-size: 3em;
-      font-weight: 700;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-      letter-spacing: 1px;
-    }
+.slidex .author span {
+    color: #777;
+}
 
-    .content p {
-      font-size: 1.3em;
-      font-weight: 300;
-      color: #f0f0f0;
-    }
+.slidex img {
+    width: 100%;
+    border-radius: 12px;
+}
 
-    /* Efeito máquina de escrever */
-    .typewriter {
-      border-right: 3px solid #fff;
-      white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      animation: typing 4s steps(40, end), blink .75s step-end infinite;
-    }
+/* Botões */
+.controls {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    gap: 10px;
+}
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+.btn {
+    width: 45px;
+    height: 45px;
+    background: #ff4d00;
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
+}
 
-    @keyframes blink {
-      from, to { border-color: transparent; }
-      50% { border-color: #fff; }
+.btn:hover {
+    background: #d83e00;
+}
+
+/* Títulos dos slidexrs */
+.slidexr-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0d1b3f;
+    margin-bottom: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .slidex {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
-  </style>
+}
+</style>
 </head>
+
 <body>
-  <div class="slide_prir">
-    <div class="slide_pri active" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80');"></div>
-    <div class="slide_pri" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1950&q=80');"></div>
-    <div class="slide_pri" style="background-image: url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1950&q=80');"></div>
-    
-    <div class="overlay"></div>
 
-    <div class="content">
-      <h1 class="typewriter" id="typewriter"></h1>
-      <p>Projetos inovadores com tecnologia e sustentabilidade.</p>
+<!-- ================= SLIDExR 1 ================= -->
+<div class="slidexr-container">
+    <h2 class="slidexr-title">Nossos Serviços — Elétrica</h2>
+
+    <div class="slidexr" id="slidexr1">
+
+        <!-- 6 SLIDExS -->
+        <div class="slidex active">
+            <div class="text-box">
+                <p>Instalações elétricas com alto padrão de segurança e qualidade.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s1-1.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Montagem de quadros elétricos industriais.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s1-2.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Sistemas de iluminação inteligente para residências e empresas.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s1-3.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Serviços de manutenção elétrica preventiva e corretiva.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s1-4.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Instalações de sistemas de energia alternativa.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s1-5.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Projetos elétricos de alta eficiência para qualquer escala.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s1-6.jpg"></div>
+        </div>
+
+        <div class="controls">
+            <div class="btn prev" data-slidexr="1">&#10094;</div>
+            <div class="btn next" data-slidexr="1">&#10095;</div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <script>
-    const slide_pris = document.querySelectorAll('.slide_pri');
-    let currentSlide_pri = 0;
-    const typewriterText = [
-      "Construindo o Futuro com Inovação",
-      "Infraestruturas Modernas e Sustentáveis",
-      "Tecnologia e Energia que Movem África"
-    ];
+<!-- ================= SLIDExR 2 ================= -->
+<div class="slidexr-container">
+    <h2 class="slidexr-title">Nossos Serviços — Mecânica</h2>
 
-    const typewriterElement = document.getElementById('typewriter');
+    <div class="slidexr" id="slidexr2">
 
-    function typeWriterEffect(text, i = 0) {
-      if (i < text.length) {
-        typewriterElement.textContent = text.substring(0, i + 1);
-        setTimeout(() => typeWriterEffect(text, i + 1), 80);
-      }
+        <div class="slidex active">
+            <div class="text-box">
+                <p>Reparação mecânica industrial com precisão técnica.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s2-1.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Manutenção automotiva profissional para frotas.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s2-2.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Serviços de diagnóstico e reparação de motores.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s2-3.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Manutenção de máquinas industriais pesadas.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s2-4.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Alinhamento, afinação e calibração técnica.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s2-5.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Soluções mecânicas completas para empresas.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s2-6.jpg"></div>
+        </div>
+
+        <div class="controls">
+            <div class="btn prev" data-slidexr="2">&#10094;</div>
+            <div class="btn next" data-slidexr="2">&#10095;</div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SLIDExR 3 ================= -->
+<div class="slidexr-container">
+    <h2 class="slidexr-title">Nossos Serviços — Industrial</h2>
+
+    <div class="slidexr" id="slidexr3">
+
+        <div class="slidex active">
+            <div class="text-box">
+                <p>Gestão e implementação de soluções industriais.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s3-1.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Automação de processos industriais.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s3-2.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Modernização de linhas de produção.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s3-3.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Montagem e manutenção de equipamentos industriais.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s3-4.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Soluções industriais de grande escala.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s3-5.jpg"></div>
+        </div>
+
+        <div class="slidex">
+            <div class="text-box">
+                <p>Suporte técnico especializado para operações industriais.</p>
+                <p class="author">— ATODASIL</p>
+            </div>
+            <div><img src="img/s3-6.jpg"></div>
+        </div>
+
+        <div class="controls">
+            <div class="btn prev" data-slidexr="3">&#10094;</div>
+            <div class="btn next" data-slidexr="3">&#10095;</div>
+        </div>
+    </div>
+</div>
+
+<script>
+/* ================= JS PARA 3 SLIDExRS ================= */
+function initSlidexr(id) {
+    const slidexr = document.querySelector("#slidexr" + id);
+    const slidexs = slidexr.querySelectorAll(".slidex");
+    const next = document.querySelector('.next[data-slidexr="' + id + '"]');
+    const prev = document.querySelector('.prev[data-slidexr="' + id + '"]');
+
+    let index = 0;
+
+    function show(i) {
+        slidexs.forEach(s => s.classList.remove("active"));
+        slidexs[i].classList.add("active");
     }
 
-    function showSlide_pri(index) {
-      slide_pris.forEach(slide_pri => slide_pri.classList.remove('active'));
-      slide_pris[index].classList.add('active');
-      typewriterElement.textContent = "";
-      typeWriterEffect(typewriterText[index]);
-    }
+    next.onclick = () => {
+        index = (index + 1) % slidexs.length;
+        show(index);
+    };
 
-    setInterval(() => {
-      currentSlide_pri = (currentSlide_pri + 1) % slide_pris.length;
-      showSlide_pri(currentSlide_pri);
-    }, 6000);
+    prev.onclick = () => {
+        index = (index - 1 + slidexs.length) % slidexs.length;
+        show(index);
+    };
+}
 
-    showSlide_pri(currentSlide_pri);
-  </script>
+initSlidexr(1);
+initSlidexr(2);
+initSlidexr(3);
+</script>
+
 </body>
 </html>

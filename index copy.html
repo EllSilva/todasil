@@ -1,236 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider Responsivo com Máquina de Escrever</title>
-    <style>
-      * {
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria de Produtos</title>
+
+<style>
+    body {
         margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
 
-      body {
-        overflow: hidden;
-      }
-
-      .slider {
-        position: relative;
+    .product-gallery {
         width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px;
+    }
 
-      .slide {
-        position: absolute;
+    .product-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 20px;
+        transition: 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
         width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-      }
+        border-radius: 10px;
+    }
 
-      .slide.active {
-        opacity: 1;
-      }
+    .product-card h3 {
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0)
-        );
-        z-index: 5;
-      }
+    .product-card p {
+        font-size: 14px;
+        color: #555;
+        margin: 10px 0;
+    }
 
-      .content {
-        position: absolute;
-        top: 50%;
-        left: 8%;
-        transform: translateY(-50%);
-        color: white;
-        z-index: 10;
-        text-align: left;
-        white-space: nowrap;
-      }
+    .price {
+        display: block;
+        font-size: 18px;
+        color: #0A74DA;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
 
-      .content h1 {
-        font-size: 3.5em;
-        font-weight: 700;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-        letter-spacing: 1px;
-      }
+    .product-card button {
+        background: #0A74DA;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-      .content p {
-        font-size: 1.4em;
-        font-weight: 300;
-        color: #f0f0f0;
-      }
+    .product-card button:hover {
+        background: #064a8c;
+    }
+</style>
+</head>
 
-      /* Efeito máquina de escrever */
-      .typewriter {
-        border-right: 3px solid #fff;
-        white-space: nowrap;
-        overflow: hidden;
-        display: inline-block;
-        animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-      }
+<body>
 
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
+<h1 style="text-align:center; margin-top:20px;">Galeria de Produtos</h1>
 
-      @keyframes blink {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: #fff;
-        }
-      }
-
-      /* ---- RESPONSIVIDADE ---- */
-
-      /* Tablets */
-      @media (max-width: 992px) {
-        .overlay {
-          width: 100%;
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0)
-          );
-        }
-
-        .content {
-          left: 5%;
-          top: 55%;
-          transform: translateY(-50%);
-          text-align: center;
-          white-space: normal;
-        }
-
-        .content h1 {
-          font-size: 2.5em;
-        }
-
-        .content p {
-          font-size: 1.2em;
-        }
-      }
-
-      /* Telemóveis */
-      @media (max-width: 600px) {
-        .slider {
-          height: 100vh;
-        }
-
-        .overlay {
-          width: 100%;
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0)
-          );
-        }
-
-        .content {
-          position: absolute;
-          top: 60%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-          width: 90%;
-        }
-
-        .content h1 {
-          font-size: 1.8em;
-          line-height: 1.3em;
-        }
-
-        .content p {
-          font-size: 1em;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <div
-        class="slide active"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1950&q=80');
-        "
-      ></div>
-      <div
-        class="slide"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1950&q=80');
-        "
-      ></div>
-      <div
-        class="slide"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1950&q=80');
-        "
-      ></div>
-
-      <div class="overlay"></div>
-
-      <div class="content">
-        <h1 class="typewriter" id="typewriter"></h1>
-        <p>Projetos inovadores com tecnologia e sustentabilidade.</p>
-      </div>
+<div class="product-gallery">
+    <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 1">
+        <h3>Produto 1</h3>
+        <p>Descrição curta do produto.</p>
+        <span class="price">15.000 AKZ</span>
+        <button>Comprar</button>
     </div>
 
-    <script>
-      const slides = document.querySelectorAll(".slide");
-      let currentSlide = 0;
-      const typewriterText = [
-        "Soluções que impulsionam o progresso.",
-        "Inovação com eficiência e confiança.",
-        "Tecnologia para um futuro sustentável",
-        "Engenharia com excelência.",
-        "Qualidade em cada projeto."
-      ];
+    <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 2">
+        <h3>Produto 2</h3>
+        <p>Descrição curta do produto.</p>
+        <span class="price">25.000 AKZ</span>
+        <button>Comprar</button>
+    </div>
 
-      const typewriterElement = document.getElementById("typewriter");
+    <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 3">
+        <h3>Produto 3</h3>
+        <p>Descrição curta do produto.</p>
+        <span class="price">10.000 AKZ</span>
+        <button>Comprar</button>
+    </div>
 
-      function typeWriterEffect(text, i = 0) {
-        if (i < text.length) {
-          typewriterElement.textContent = text.substring(0, i + 1);
-          setTimeout(() => typeWriterEffect(text, i + 1), 80);
-        }
-      }
+    <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Produto 4">
+        <h3>Produto 4</h3>
+        <p>Descrição curta do produto.</p>
+        <span class="price">19.500 AKZ</span>
+        <button>Comprar</button>
+    </div>
+</div>
 
-      function showSlide(index) {
-        slides.forEach((slide) => slide.classList.remove("active"));
-        slides[index].classList.add("active");
-        typewriterElement.textContent = "";
-        typeWriterEffect(typewriterText[index]);
-      }
-
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }, 6000);
-
-      showSlide(currentSlide);
-    </script>
-  </body>
+</body>
 </html>

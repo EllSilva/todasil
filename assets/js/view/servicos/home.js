@@ -1,60 +1,47 @@
-import get_template from '../../components/get_template.js'
+import get_template from "../../components/get_template.js";
 
 export default {
-    data: function () {
-        return {
-            title: "home",
-             importacao: "importacao0",
-             exportacao: "exportacao0",
-             bordagem: "bordagem0",
-             
-        } 
-        
-    },
+  data: function () {
+    return {
+      title: "home",
+      importacao: "importacao0",
+      exportacao: "exportacao0",
+      bordagem: "bordagem0",
+    };
+  },
 
-    methods:{
-         
-    },
+  methods: {
+    initSlidexr(id) {
+      const slidexr = document.querySelector("#slidexr" + id);
+      const slidexs = slidexr.querySelectorAll(".slidex");
+      const next = document.querySelector('.next[data-slidexr="' + id + '"]');
+      const prev = document.querySelector('.prev[data-slidexr="' + id + '"]');
 
-    async mounted() {
+      let index = 0;
 
-        var slider = new KeenSlider(
-        "#my-keen-slider",
-        {
-          loop: true,
-        },
-        [
-          (slider) => {
-            let timeout
-            let mouseOver = false
-            function clearNextTimeout() {
-              clearTimeout(timeout)
-            }
-            function nextTimeout() {
-              clearTimeout(timeout)
-              if (mouseOver) return
-              timeout = setTimeout(() => {
-                slider.next()
-              }, 2000)
-            }
-            slider.on("created", () => {
-              slider.container.addEventListener("mouseover", () => {
-                mouseOver = true
-                clearNextTimeout()
-              })
-              slider.container.addEventListener("mouseout", () => {
-                mouseOver = false
-                nextTimeout()
-              })
-              nextTimeout()
-            })
-            slider.on("dragStarted", clearNextTimeout)
-            slider.on("animationEnded", nextTimeout)
-            slider.on("updated", nextTimeout)
-          },
-        ]
-      )  
+      function show(i) {
+        slidexs.forEach((s) => s.classList.remove("active"));
+        slidexs[i].classList.add("active");
+      }
+
+      next.onclick = () => {
+        index = (index + 1) % slidexs.length;
+        show(index);
+      };
+
+      prev.onclick = () => {
+        index = (index - 1 + slidexs.length) % slidexs.length;
+        show(index);
+      };
     },
-    template: await get_template('./assets/js/view/servicos/home')
-}
- 
+  },
+
+  async mounted() {
+
+    this.initSlidexr(1);
+     this.initSlidexr(2);
+     this.initSlidexr(3);
+
+  },
+  template: await get_template("./assets/js/view/servicos/home"),
+};

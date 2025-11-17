@@ -13,11 +13,11 @@ export default {
     const slide_pris = document.querySelectorAll(".slide_pri");
     let currentSlide_pri = 0;
     const typewriterText = [
-      "Soluções que impulsionam o progresso.",
-      "Inovação com eficiência e confiança.",
-      "Tecnologia para um futuro sustentável",
-      "Engenharia com excelência.",
-      "Qualidade em cada projeto.",
+      "Soluções.",
+      "Inovação",
+      "Tecnologia",
+      "Engenharia",
+      "Qualidade",
     ];
 
     const typewriterElement = document.getElementById("typewriter");

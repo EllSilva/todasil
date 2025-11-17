@@ -1,159 +1,412 @@
 <div>
   <!-- MAIN -->
 
-
-  <!-- AREA DO MODAL DOS SERVICO EM PDF -->
-  <div class="servicos">
-    <div class="lbox jlsrow" id="importacao">
-
-      <div class="btn2">
-        <a href="#/servicos" id="close"> <i class="icon-sli-close text-size-40 text-red"></i></a>
-      </div>
-      <div class="col-lg-12 col-md-12">
-
-        <div class="tamanhoCard">
-
-          <div v-if="importacao === 'importacao0'">
-            <iframe src="assets/doc/importacao.pdf" class="box-pdf" style="border: none;"></iframe>
-          </div>
-
-        </div>
-
-      </div>
+  <!-- ================= SLIDExR 1 ================= -->
+  <div class="slidexr-container">
+    <div class="slidexr">
+      <p class="text-strong text-size-80 text-red">01</p>
+      <h2 class="text-size-50 text-line-height-1 text-dark">
+        <b>SERVIÇOS INFORMATICO</b>
+      </h2>
     </div>
 
-
-    <div class="lbox jlsrow" id="exportacao">
-
-      <div class="btn2">
-        <a href="#/servicos" id="close"> <i class="icon-sli-close text-size-40 text-red"></i></a>
-      </div>
-
-      <div class="col-lg-12 col-md-12">
-
-        <div class="tamanhoCard">
-
-          <div v-if="exportacao === 'exportacao0'">
-            <iframe src="assets/doc/exportacao.pdf" class="box-pdf" style="border: none;"></iframe>
+    <div class="slidexr" id="slidexr1">
+      <!-- 6 SLIDExS -->
+      <div class="slidex active">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Reparação e Manutenção de Computadore</h2>
+            </div>
+            <p>
+              Realizamos diagnóstico, reparação e manutenção preventiva de
+              computadores e equipamentos tecnológicos. Trabalhamos com hardware
+              e software, garantindo desempenho ideal e segurança dos seus
+              dados.
+            </p>
+            <div class="lista_ul">
+              <h1>Serviços incluem:</h1>
+              <ul>
+                <li>
+                  Reparo de componentes eletrónicos e substituição de peças;
+                </li>
+                <li>
+                  Instalação e configuração de sistemas operativos e aplicativos
+                  essenciais;
+                </li>
+                <li>
+                  Otimização de desempenho e limpeza interna de equipamentos;
+                </li>
+                <li>Instalação de antivírus e sistemas de firewall</li>
+                <li>Instalação de antivírus e sistemas de firewall</li>
+              </ul>
+            </div>
           </div>
         </div>
+        <div><img src="assets/img/gallery/gallery2.jpg" /></div>
       </div>
 
-    </div>
-
-
-    <div class="lbox jlsrow" id="bordagem">
-      <div class="btn2">
-        <a href="#/servicos" id="close"> <i class="icon-sli-close text-size-40 text-red"></i></a>
-      </div>
-      <div class="col-lg-12 col-md-12">
-
-        <div class="tamanhoCard">
-
-          <div v-if="bordagem === 'bordagem0'">
-            <iframe src="assets/doc/bordagem.pdf" class="box-pdf" style="border: none;"></iframe>
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Impressoras e Fotocopiadoras</h2>
+            </div>
+            <p>
+              Na TODASIL, garantimos que o seu ambiente de impressão funcione
+              com máxima eficiência. Oferecemos soluções completas para gestão,
+              manutenção e suporte técnico de impressoras e fotocopiadoras,
+              assegurando que o seu negócio opere sem interrupções e com custos
+              totalmente controlados.
+              <br />
+              Oferecemos módulos flexíveis de serviços, permitindo que cada
+              cliente escolha desde a manutenção preventiva até à gestão total
+              dos equipamentos.
+            </p>
+            <div class="lista_ul">
+              <h1>Com a TODASIL, a sua empresa beneficia de:</h1>
+              <ul>
+                <li>Redução de custos operacionais</li>
+                <li>Menos tempo de paragem</li>
+                <li>Equipamentos sempre otimizados</li>
+                <li>Intervenção rápida, presencial ou remota</li>
+              </ul>
+            </div>
           </div>
-
         </div>
+        <div><img src="assets/img/gallery/impressora.jpg" /></div>
+      </div>
+
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Sistemas de Câmeras de Segurança (CCTV)</h2>
+            </div>
+            <p>
+              Projetamos e instalamos sistemas completos de vídeo-vigilância
+              para residências, escritórios e empresas, com monitoramento local
+              e remoto. Garantimos segurança reforçada, controlo total e
+              acompanhamento em tempo real.
+            </p>
+
+            <div class="lista_ul">
+              <h1>Inclui:</h1>
+              <ul>
+                <li>
+                  Instalação de câmeras IP e analógicas (Wi-Fi e cabeadas);
+                </li>
+                <li>Configuração de DVRs/NVRs e armazenamento em nuvem;</li>
+                <li>Acesso remoto via smartphone;</li>
+                <li>Monitoramento 24h com gravação contínua.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/cameras.jpg" /></div>
+      </div>
+
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Redes Estruturadas</h2>
+            </div>
+            <p>
+              Projetamos e instalamos redes estruturadas modernas e seguras,
+              preparadas para suportar a transmissão de dados, voz e vídeo com
+              máxima estabilidade e velocidade. Criamos infraestruturas
+              eficientes que garantem comunicação fluida e alto desempenho em
+              qualquer ambiente.
+            </p>
+
+            <div class="lista_ul">
+              <h1>O que entregamos:</h1>
+              <ul>
+                <li>
+                  Cabeamento estruturado profissional (CAT6 e fibra ótica);
+                </li>
+                <li>Instalação de racks, patch panels e pontos de rede;</li>
+                <li>Configuração otimizada de switches e roteadores;</li>
+                <li>Testes completos e certificação da rede.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/cctv.jpg" /></div>
+      </div>
+
+      <div class="controls">
+        <div class="btn prev" data-slidexr="1">&#10094;</div>
+        <div class="btn next" data-slidexr="1">&#10095;</div>
       </div>
     </div>
   </div>
- 
 
-
-<main role="main">
-  <!-- TOP SECTION -->
-  <header class="grid">
-    <div class="s-12 padding-2x">
-      <h1 class="text-strong text-white text-center center text-size-60 text-uppercase margin-bottom-20">NOSSOS SERVIÇOS
-      </h1>
-      <p class="text-size-20 text-white text-center center text-uppercase">
-        Cada cliente é a nossa prioridade, contamos com uma equipa de colaboradores que garante Soluções imediatas,
-        eficazes e a baixo custo. A nossa experiência com cobertura internacional, garante-nos facilidade e rapidez no
-        desembarque aduaneiro.</p>
-    </div>
-  </header>
-
-
-
-  <!-- SECTION 1 -->
-  <section class="grid">
-    <div class="m-12 l-7 padding-2x background-white">
-      <p class="text-strong text-size-80 text-red">01</p>
-
-      <h2 class="text-size-50 text-line-height-1 text-dark"><b>IMPORTAÇÕES</b></h2>
-
-      <p>Garantimos uma importação precisa de uma assessoria com responsabilidade e planejamento fornecendo as melhores
-        opções de importação e nacionalizar a carga, escapando ao peso da carga tributária e da oscilação do dólar..</p>
-      <p>A importação pode significar a diferença fundamental entre sua empresa e as concorrentes. Por meio das
-        importações, seus negócios alcançam os mercados mais dinâmicos do mundo, obtendo os melhores recursos para
-        elevar a competitividade dos seus negócios. </p>
-
-      <div class="s-12 padding-2x ">
-        <a href="#importacao" class="s-12 m-9   center button text-size-20 text-white background-red">BAIXAR DOCUMNETO
-          DE NORMAS</a>
-      </div>
-    </div>
-
-    <!-- Image-->
-    <img class="m-12 l-5" src="assets/img/servicos-01.jpg">
-  </section>
-
-  <!-- SECTION 2 -->
-  <section class="grid">
-    <!-- Image-->
-    <img class="m-12 l-5" src="assets/img/servicos-02.jpg">
-
-    <div class="m-12 l-7 padding-2x background-dark">
+  <!-- ================= SLIDExR 2 ================= -->
+  <div class="slidexr-container-br">
+    <div class="slidexr">
       <p class="text-strong text-size-80 text-red">02</p>
+      <h2 class="text-size-50 text-line-height-1 text-dark">
+        <b>SERVIÇOS INDUSTRIAL</b>
+      </h2>
+    </div>
 
-      <h2 class="text-size-50 text-line-height-1 margin-bottom-30 text-white"><b>EXPORTAÇÕES</b></h2>
+    <div class="slidexr" id="slidexr2">
+      <div class="slidex active">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Manutenção Elétrica</h2>
+            </div>
+            <p>
+              Realizamos manutenção preventiva e corretiva em sistemas elétricos
+              industriais, comerciais e residenciais, garantindo segurança,
+              eficiência e continuidade operacional. A nossa equipa assegura
+              intervenções rápidas, confiáveis e alinhadas às normas técnicas.
+            </p>
+            <div class="lista_ul">
+              <h1>O que inclui:</h1>
+              <ul>
+                <li>Inspeção completa das instalações elétricas;</li>
+                <li>Manutenção preventiva e corretiva;</li>
+                <li>Identificação e reparo de falhas e curtos-circuitos;</li>
+                <li>Substituição de componentes danificados;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/eletrica.jpg" /></div>
+      </div>
 
-      <p>"A exportação refere-se à venda, envio ou doação de produtos, bens e serviços de um país a outro. É, portanto,
-        a saída de uma mercadoria ou serviço nacional para outro país.</p>
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Manutenção Mecânica</h2>
+            </div>
+            <p>
+              Na TODASIL, realizamos manutenção mecânica completa para garantir
+              que os seus equipamentos operem com máxima eficiência e
+              fiabilidade. Atuamos com precisão técnica para reduzir paragens,
+              evitar avarias e prolongar a vida útil das máquinas — assegurando
+              produtividade contínua.
+            </p>
+            <div class="lista_ul">
+              <h1>O que Inclui a Nossa Manutenção Mecânica:</h1>
+              <ul>
+                <li>Reparação de componentes mecânicos danificados;</li>
+                <li>Alinhamento e calibração de sistemas;</li>
+                <li>Substituição de peças desgastadas;</li>
+                <li>
+                  Inspeção preventiva para detetar falhas antes que ocorram;
+                </li>
+                <li>Otimização do funcionamento de máquinas e equipamentos.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/mecanica.jpg" /></div>
+      </div>
 
-      <h5 class="text-strong text-size-15 text-line-height-1 padding">"Vantagens" </h5>
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Automação Industrial</h2>
+            </div>
+            <p>
+              Na TODASIL, desenvolvemos soluções de automação industrial que
+              elevam o desempenho das operações e otimizam processos com máxima
+              eficiência. Implementamos sistemas inteligentes que aumentam a
+              produtividade, reduzem custos operacionais e melhoram a precisão,
+              garantindo resultados consistentes e confiáveis.
+            </p>
+            <p>
+              Cada projeto é personalizado de acordo com as necessidades do
+              cliente, garantindo integração perfeita com o ambiente industrial
+              e suportando o crescimento do negócio.
+            </p>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/automa.jpg" /></div>
+      </div>
 
-      <ul>
-        <li>Preços atrativos</li>
-        <li>Tecnologia de ponta</li>
-        <li>Fornecedores competitivos</li>
-      </ul>
-      <div class="s-12 padding">
-        <a href="#exportacao" class="s-12 m-9   center button text-size-20 text-white background-red">BAIXAR DOCUMNETO
-          DE NORMAS</a>
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Instrumentação Industrial</h2>
+            </div>
+            <p>
+              Prestamos serviços especializados de calibração, instalação e
+              manutenção de instrumentos de medição e controlo, garantindo
+              precisão, segurança e total confiabilidade nos processos
+              industriais.
+              <br />
+              A TODASIL assegura que cada equipamento opere dentro dos padrões
+              exigidos, reduzindo falhas e melhorando o desempenho das
+              operações.
+            </p>
+            <div class="lista_ul">
+              <h1>O que fazemos:</h1>
+              <ul>
+                <li>Calibração de instrumentos de medição e controlo;</li>
+                <li>Instalação de sensores, transmissores e controladores;</li>
+                <li>Manutenção preventiva e corretiva de equipamentos;</li>
+                <li>
+                  Ajuste e verificação de precisão, Testes de desempenho e
+                  conformidade;
+                </li>
+                <li>Integração de instrumentos aos sistemas de automação;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/automa.jpg" /></div>
+      </div>
+
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Montagem de Máquinas Industriais</h2>
+            </div>
+            <p>
+              Na TODASIL, realizamos a montagem e o comissionamento de máquinas
+              e equipamentos industriais com elevados padrões de qualidade e
+              segurança. A nossa equipa assegura uma instalação precisa,
+              eficiente e totalmente alinhada às especificações técnicas do
+              fabricante, garantindo que os equipamentos entrem em operação com
+              desempenho máximo desde o primeiro dia.
+            </p>
+            <div class="lista_ul">
+              <h1>O que Inclui:</h1>
+              <ul>
+                <li>
+                  Montagem completa de máquinas e equipamentos industriais;
+                </li>
+                <li>Comissionamento e testes de funcionamento;</li>
+                <li>Alinhamento e ajustes finais de precisão;</li>
+                <li>
+                  Instalação de componentes mecânicos, elétricos e pneumáticos;
+                </li>
+                <li>
+                  Verificação de segurança e conformidade com normas técnicas;
+                </li>
+                <li>
+                  Acompanhamento inicial da operação para garantir desempenho
+                  ótimo.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="assets/img/gallery/maquina.jpg" /></div>
+      </div>
+
+      <div class="slidex">
+        <div class="text-box">
+          <div class="about-caption mb-50">
+            <!-- Section Tittle -->
+            <div class="section-tittle mb-35">
+              <h2>Impressoras e Fotocopiadoras</h2>
+            </div>
+            <p>
+              Na TODASIL, garantimos que o seu ambiente de impressão funcione
+              com máxima eficiência. Oferecemos soluções completas para gestão,
+              manutenção e suporte técnico de impressoras e fotocopiadoras,
+              assegurando que o seu negócio opere sem interrupções e com custos
+              totalmente controlados.
+              <br />
+              Oferecemos módulos flexíveis de serviços, permitindo que cada
+              cliente escolha desde a manutenção preventiva até à gestão total
+              dos equipamentos.
+            </p>
+            <div class="lista_ul">
+              <h1>Com a TODASIL, a sua empresa beneficia de:</h1>
+              <ul>
+                <li>Redução de custos operacionais</li>
+                <li>Menos tempo de paragem</li>
+                <li>Equipamentos sempre otimizados</li>
+                <li>Intervenção rápida, presencial ou remota</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div><img src="img/s2-6.jpg" /></div>
+      </div>
+
+      <div class="controls">
+        <div class="btn prev" data-slidexr="2">&#10094;</div>
+        <div class="btn next" data-slidexr="2">&#10095;</div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- SECTION 3 -->
-  <section class="grid">
-    <div class="m-12 l-7 padding-2x background-aqua">
-      <p class="text-strong text-size-80 text-white">03</p>
+  <!-- ================= SLIDExR 3 ================= -->
+  <div class="slidexr-container">
+    <p class="text-strong text-size-80 text-red">03</p>
+    <h2 class="text-size-50 text-line-height-1 text-dark">
+      <b>COMÉRCIO DE PRODUTOS</b>
+    </h2>
 
-      <h2 class="text-size-50 text-line-height-1 text-white"><b>CABOTAGENS E BALDEAÇÕES</b></h2>
-
-      <p>Considerando a necessidade de transportar cargas de produtos e insumos entre cidades, Estados e até países,
-        surgem os modais de transporte, os quais poderão ser realizados via terrestre, aéreo ou pelo mar ou rios, e com
-        o crescimento da tecnologia e informação, a questão da logística desponta cada vez mais, razão pela qual vale o
-        estudo através do presente artigo, que utiliza o método indutivo, quanto a metodologia empregada.</p>
-
-      <div class="s-12 padding-2x ">
-        <a href="#bordagem" class="s-12 m-9   center button text-size-20 text-white background-red">BAIXAR DOCUMNETO DE
-          NORMAS</a>
-      </div>
+    <div>
+    
+           <div class="section-tittle mb-35">
+            <h2>Venda de Materiais Elétrico</h2>
+          </div>
+ 
+               
+          <div class="row ">
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+              <div class="col-xl-2 col-lg-2 col-md-3 p-4">
+                <img class="galeria" src="assets/img/gallery/eletrica.jpg" />
+                 <h5>Venda Elétrico</h5>
+              </div>
+            </div>
+        
+  
     </div>
-
-    <!-- Image  -->
-    <img class="m-12 l-5" src="assets/img/servicos-03.jpg">
-  </section>
-
-  <!-- SECTION 6 -->
-  <section class="grid margin-bottom">
-    <div class="s-12 padding-2x background-dark">
-      <a href="contact.html" class="s-12 m-9 l-3 center button text-size-20 text-white background-red">CONTACTA-NOS</a>
-    </div>
-  </section>
-</main>
-
+  </div>
 </div>
