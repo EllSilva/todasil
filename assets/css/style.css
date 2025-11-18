@@ -1,7 +1,7 @@
 /* Theme Description
 -------------------------------------------------
 
-	  Theme Name:
+	  Theme Name:   p
 	  Author:
 	  Support:
 	  Description:
@@ -218,7 +218,7 @@ h6 {
 p {
   font-family: "Muli", sans-serif;
   color: #10285d;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
   margin-bottom: 15px;
   font-weight: normal;
@@ -5117,7 +5117,7 @@ hr {
   /* line 3, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_testimonial.scss */
   .testimonial-area .testimonial-caption {
     height: 343px;
-    padding: 82px 18px 20px 18px;
+    padding: 42px 18px 20px 18px;
   }
 }
 
@@ -5141,7 +5141,7 @@ hr {
 @media (max-width: 575px) {
   /* line 23, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_testimonial.scss */
   .testimonial-area .testimonial-caption p {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

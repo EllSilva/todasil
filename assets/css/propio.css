@@ -381,6 +381,7 @@ h2 {
 /* Responsivo */
 @media (max-width: 768px) {
 
+
   .wrap {
     width: 90%;
   }
@@ -473,7 +474,7 @@ body {
 /* Responsivo */
 @media (max-width: 850px) {
   .content h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
 
 }
@@ -696,4 +697,40 @@ h1 {
   height: 12px;
   border: 2px solid #1a3b6f;
   border-radius: 50%;
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 40px;
+  }
+
+.text-box h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.text-box p {
+  line-height: 1.6;
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+
+ .slider-container { 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  padding: 10px 5px;
+}
+
+.slide {
+  min-width: 90px;
+  padding: 10px;
+  text-align: center;
+}
+
 }
