@@ -9,7 +9,7 @@
 	  
 ------------------------------------------------- 
 */
-/* CSS Index
+/* CSS Index     p {
 -------------------------------------------------
 
 	1. Theme default css
@@ -793,7 +793,7 @@ hr {
     color: #000000;
     font-size: 15px;
     line-height: 18px;
-    margin-bottom: 21px;
+    margin-bottom: 11px;
     font-weight: normal;
   }
 }
@@ -2697,6 +2697,9 @@ hr {
     padding-top: 70px;
     padding-bottom: 70px;
   }
+
+
+
 }
 
 /* line 774, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -3079,7 +3082,7 @@ hr {
 
   /* line 958, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
   .section-tittle {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: left !important;
   }
 }
