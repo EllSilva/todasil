@@ -13,11 +13,11 @@ export default {
     const slide_pris = document.querySelectorAll(".slide_pri");
     let currentSlide_pri = 0;
     const typewriterText = [
-      "Soluções.",
+      "Soluções",
       "Inovação",
       "Tecnologia",
       "Engenharia",
-      "Industrial ",
+      "Industrial",
     ];
 
     const typewriterElement = document.getElementById("typewriter");

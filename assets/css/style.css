@@ -4328,7 +4328,7 @@ hr {
 /* line 25, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
 .gallery-area .single-gallery .gallery-img {
   position: relative;
-  height: 565px;
+  height:465px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -4353,6 +4353,11 @@ hr {
   width: 100%;
   transition: .4s;
   z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:60px;
 }
 
 /* line 46, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
@@ -4391,7 +4396,7 @@ hr {
 
   /* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
   .gallery-area .single-gallery .thumb-content-box .thumb-content h3 {
-    font-size: 35px;
+    font-size: 25px;
   }
 }
 
@@ -4794,6 +4799,7 @@ hr {
   position: absolute;
   bottom: 43px;
   left: 50px;
+
 }
 
 /* line 183, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
@@ -4807,6 +4813,8 @@ hr {
   display: block;
   line-height: 1.3;
   letter-spacing: 1px;
+
+  
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
